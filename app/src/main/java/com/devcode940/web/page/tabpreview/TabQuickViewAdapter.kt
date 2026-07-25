@@ -117,12 +117,6 @@ class TabQuickViewAdapter(private var context: Context?) :
         }
     }
 
-    fun getListener(): OnTabClickListener? = listener
-
-    fun setListener(listener: OnTabClickListener?) {
-        this.listener = listener
-    }
-
     class TabQuickViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val siteTitle: TextView = itemView.findViewById(R.id.item_title)
         val closeButton: ImageView = itemView.findViewById(R.id.item_close_button)

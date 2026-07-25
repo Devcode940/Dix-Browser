@@ -37,7 +37,7 @@ class FrontPageView : FrameLayout, IFrontPage.View {
         siteGird?.adapter = siteAdapter
 
         navBar = findViewById(R.id.new_tab_nav_bar)
-        navBar?.setNavListener(FrontPageNavListener(getContext()))
+        navBar?.navListener = FrontPageNavListener(getContext())
 
         val gotoButton = findViewById<ImageView>(R.id.goto_button)
         gotoButton.setImageResource(R.mipmap.ic_arrow_forward_black_36dp)

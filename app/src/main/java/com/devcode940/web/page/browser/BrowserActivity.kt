@@ -96,7 +96,7 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
         } else {
             val prevDialog = supportFragmentManager.findFragmentByTag(TAB_DIALOG_TAG)
             if (prevDialog is TabDialogKt) {
-                prevDialog.setTabViewSubject(getTabController())
+                prevDialog.tabViewSubject = getTabController()
                 prevDialog.dismiss()
             }
         }
@@ -119,7 +119,7 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
     }
 
     private fun setupNavigationButtons() {
-        findViewById<ImageButton>(R.id.btn_back).setOnClickListener { getTabController().onTabGoBack() }
+        findViewById<ImageButton>(R.id.btn_back).setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         findViewById<ImageButton>(R.id.btn_forward).setOnClickListener { getTabController().onTabGoForward() }
         findViewById<ImageButton>(R.id.btn_refresh).setOnClickListener { getTabController().onTabRefresh() }
         findViewById<ImageButton>(R.id.btn_menu).setOnClickListener { showSettingDialog() }
@@ -194,7 +194,7 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
         }
         val tabDialog = TabDialogKt().apply {
             isCancelable = false
-            setTabViewSubject(getTabController())
+            tabViewSubject = getTabController()
         }
         tabDialog.show(supportFragmentManager, TAB_DIALOG_TAG)
     }
@@ -288,7 +288,7 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
             val args = target.arguments ?: continue
             if (target is ITab) {
                 val info = TabInfo.create(
-                    args.getString(TabConst.ARG_TAG),
+                    args.getString(TabConst.ARG_TAG) ?: "",
                     args.getString(TabConst.ARG_TITLE)
                 )
                 getTabController().onRestoreTabCache(info, target)

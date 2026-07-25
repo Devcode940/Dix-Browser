@@ -112,7 +112,7 @@ class TabCacheManager(
 
         if (current == null) {
             // 当前没有显示任何Fragment，直接show，对应某一页面被关闭的情况
-            manager.beginTransaction().show(target).commit()
+            target?.let { manager.beginTransaction().show(it).commit() }
             return
         }
 

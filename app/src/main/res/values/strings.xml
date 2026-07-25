@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Dix Browser</string>
+
+    <string name="placeholder_todo">TODO</string>
+    <string name="placeholder_url">https://www.google.com</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_tab_welcome">New Tab</string>
+
+    <string name="start">Start</string>
+    <string name="no_picture_mode">No Image Mode</string>
+    <string name="history">History</string>
+    <string name="settings">Settings</string>
+    <string name="quit">Quit</string>
+
+    <string name="search_or_type_url">Search or type URL</string>
+
+    <string name="warn_invalid_url">Please enter a valid URL</string>
+
+    <!-- Download -->
+    <string name="downloads">Downloads</string>
+    <string name="download_started">Download started</string>
+    <string name="download_completed">Download completed</string>
+
+    <!-- Phase 2 -->
+    <string name="incognito">Incognito</string>
+    <string name="dark_mode">Dark Mode</string>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_new_tab"
+        android:title="New Tab" />
+
+    <item
+        android:id="@+id/menu_new_incognito"
+        android:title="New Incognito Tab" />
+
+    <item
+        android:id="@+id/menu_downloads"
+        android:title="Downloads" />
+
+    <item
+        android:id="@+id/menu_history"
+        android:title="History" />
+
+    <!-- Phase 3 Features -->
+    <item
+        android:id="@+id/menu_desktop_mode"
+        android:title="Desktop Mode"
+        android:checkable="true" />
+
+    <item
+        android:id="@+id/menu_fullscreen"
+        android:title="Full Screen" />
+
+    <item
+        android:id="@+id/menu_translate"
+        android:title="Translate Page" />
+
+    <item
+        android:id="@+id/menu_resource_sniffer"
+        android:title="Resource Sniffer" />
+
+    <item
+        android:id="@+id/menu_summarizer"
+        android:title="Summarize with Arena AI" />
+
+    <item
+        android:id="@+id/menu_save_page"
+        android:title="Save Page for Offline" />
+
+    <item
+        android:id="@+id/menu_saved_pages"
+        android:title="View Saved Pages" />
+
+    <item
+        android:id="@+id/menu_pip"
+        android:title="Picture in Picture Video" />
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/menu_dark_mode"
+        android:title="Toggle Dark Mode"
+        android:checkable="true" />
+
+</menu>

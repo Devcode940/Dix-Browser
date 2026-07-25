@@ -31,7 +31,7 @@ data class TabInfo(
         fun create(tag: String, title: String?): TabInfo = TabInfo(tag = tag, title = title)
 
         @JvmStatic
-        fun create(tag: String, title: String?, uri: Uri): TabInfo =
+        fun create(tag: String, title: String?, uri: Uri?): TabInfo =
             TabInfo(tag = tag, title = title, uri = uri)
     }
 }

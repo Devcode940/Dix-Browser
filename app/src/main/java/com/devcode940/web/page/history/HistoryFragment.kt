@@ -90,7 +90,7 @@ class HistoryFragment : Fragment(), IHistory.View {
             recyclerView?.addItemDecoration(DividerItemDecoration(it, LinearLayoutManager.VERTICAL))
         }
 
-        presenter = HistoryPresenterImpl(context, this)
+        presenter = HistoryPresenterImpl(requireContext(), this)
         return rootView
     }
 

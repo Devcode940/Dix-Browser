@@ -80,7 +80,7 @@ class PageNestedWebView : LinearLayout, IWebView {
         progressBar = findViewById(R.id.web_loading_progress_bar)
 
         browserNavBar = findViewById(R.id.web_nav_bar)
-        navBar?.navListener = WebNavListener(context)
+        browserNavBar?.navListener = WebNavListener(context)
     }
 
     private fun configureWebView() {

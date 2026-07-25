@@ -63,8 +63,8 @@ class FrontPageView : FrameLayout, IFrontPage.View {
         // FIXME
     }
 
-    override fun showWebSite(webSiteList: List<WebSite>?) {
-        if (siteAdapter == null || webSiteList == null) {
+    override fun showWebSite(webSiteList: List<WebSite>) {
+        if (siteAdapter == null) {
             return
         }
         siteAdapter?.appendDataList(webSiteList)

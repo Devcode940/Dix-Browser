@@ -80,7 +80,7 @@ class PageNestedWebView : LinearLayout, IWebView {
         progressBar = findViewById(R.id.web_loading_progress_bar)
 
         browserNavBar = findViewById(R.id.web_nav_bar)
-        browserNavBar?.setNavListener(WebNavListener(context))
+        navBar?.navListener = WebNavListener(context)
     }
 
     private fun configureWebView() {
@@ -106,13 +106,11 @@ class PageNestedWebView : LinearLayout, IWebView {
                 if (view != null && view.progress == 100 && ctx is IBrowser) {
                     val historyController = ctx.provideBrowserComponent(BrowserConst.HISTORY_COMPONENT)
                         as IBrowser.IHistoryController
-                    historyController.addHistory(
-                        History().apply {
-                            title = view.title
-                            url = view.url
-                            time = System.currentTimeMillis()
-                        }
-                    )
+                    val history = History()
+                    history.title = view.title
+                    history.url = view.url
+                    history.time = System.currentTimeMillis()
+                    historyController.addHistory(history)
                 }
 
                 view?.let {

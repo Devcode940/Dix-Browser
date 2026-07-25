@@ -35,7 +35,7 @@ class FrontPagePresenterImpl(
                     sp.edit().putBoolean(SharedPreferencesUtils.KEY_SITE_LIST_CREATED, true).apply()
                 }
 
-                val result: List<WebSite> = withContext(Dispatchers.IO) { db.webSiteDao().all }
+                val result: List<WebSite> = withContext(Dispatchers.IO) { db.webSiteDao().getAll() }
                 view.showWebSite(result)
             } catch (e: Exception) {
                 e.printStackTrace()

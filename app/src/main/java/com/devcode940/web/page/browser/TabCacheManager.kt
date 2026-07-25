@@ -215,7 +215,7 @@ class TabCacheManager(
         this.observer = null
     }
 
-    override fun provideInfoList(): List<TabInfo> = this.infoList
+    override fun provideInfoList(): MutableList<TabInfo> = this.infoList
 
     override fun updateTabInfo(tabInfo: TabInfo) {
         try {

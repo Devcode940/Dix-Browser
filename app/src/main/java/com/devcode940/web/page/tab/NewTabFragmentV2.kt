@@ -261,7 +261,7 @@ class NewTabFragmentV2 : Fragment(), ITab, IWebView.OnWebInteractListener {
             val args = Bundle()
             args.putString(TabConst.ARG_TITLE, title)
             args.putString(TabConst.ARG_TAG, tag)
-            args.putParcelable(TabConst.ARG_URI, uri)
+            args.putParcelable(TabConst.ARG_URI, uri ?: Uri.EMPTY)
             return NewTabFragmentV2().apply { arguments = args }
         }
     }

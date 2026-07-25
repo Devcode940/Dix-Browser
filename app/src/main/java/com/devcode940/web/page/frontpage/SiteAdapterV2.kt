@@ -78,7 +78,7 @@ class SiteAdapterV2(private val context: Context) :
             }
             val application = context.applicationContext as EasyApplication
             val db = application.getAppDatabase()
-            val dbList = db.webSiteDao().all
+            val dbList = db.webSiteDao().getAll()
             return if (dbList.isEmpty()) ArrayList() else ArrayList(dbList)
         }
     }

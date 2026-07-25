@@ -19,7 +19,7 @@ class TabQuickViewAdapter(private var context: Context?) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), ITabQuickView.Observer {
 
     private var tabLruCache: ITabQuickView.Subject? = null
-    private var listener: OnTabClickListener? = null
+    var listener: OnTabClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == VIEW_ADD) {

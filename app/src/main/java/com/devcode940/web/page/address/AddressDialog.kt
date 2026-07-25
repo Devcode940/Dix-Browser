@@ -51,7 +51,7 @@ class AddressDialog : DialogFragment() {
             if (StringUtils.isValidUrl(url)) {
                 val tabController = browser?.provideBrowserComponent(BrowserConst.TAB_COMPONENT)
                         as? IBrowser.ITabController
-                tabController?.onTabLoadUrl(url)
+                url?.let { tabController?.onTabLoadUrl(it) }
             } else {
                 Toast.makeText(context, getText(R.string.warn_invalid_url), Toast.LENGTH_SHORT).show()
             }

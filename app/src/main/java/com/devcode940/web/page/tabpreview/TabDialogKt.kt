@@ -50,7 +50,7 @@ class TabDialogKt : DialogFragment() {
         tabRecyclerView = dialogView.findViewById(R.id.tab_list_recyclerview)
         tabRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         tabQuickViewAdapter = TabQuickViewAdapter(context)
-        tabQuickViewAdapter?.attachToSubject(tabViewSubject)
+        tabViewSubject?.let { tabQuickViewAdapter?.attachToSubject(it) }
         tabQuickViewAdapter?.listener = object : TabQuickViewAdapter.OnTabClickListener {
             override fun onTabClick(info: TabInfo) {
                 val tabController = browser?.provideBrowserComponent(BrowserConst.TAB_COMPONENT)

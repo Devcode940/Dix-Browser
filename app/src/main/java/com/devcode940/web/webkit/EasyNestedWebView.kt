@@ -121,7 +121,7 @@ class EasyNestedWebView : WebView, NestedScrollingChild {
         mChildHelper.stopNestedScroll()
     }
 
-    override fun hasNestedScrollingParent(): Boolean = mChildHelper.hasNestedScrollingParent
+    override fun hasNestedScrollingParent(): Boolean = mChildHelper.hasNestedScrollingParent()
 
     override fun dispatchNestedScroll(
         dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int,

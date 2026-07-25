@@ -216,7 +216,7 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
             return
         }
         AddressDialog().apply {
-            setCurrentUrl(currentUrl)
+            this.currentUrl = currentUrl
             show(supportFragmentManager, ADDRESS_DIALOG_TAG)
         }
     }

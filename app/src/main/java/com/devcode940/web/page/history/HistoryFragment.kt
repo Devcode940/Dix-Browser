@@ -84,7 +84,7 @@ class HistoryFragment : Fragment(), IHistory.View {
                 }
             }
         })
-        recyclerView?.layoutManager = LinearLayoutManager(context)
+        recyclerView?.layoutManager = LinearLayoutManager(requireContext())
         recyclerView?.adapter = adapter
         context?.let {
             recyclerView?.addItemDecoration(DividerItemDecoration(it, LinearLayoutManager.VERTICAL))
@@ -108,9 +108,9 @@ class HistoryFragment : Fragment(), IHistory.View {
         super.onDestroy()
     }
 
-    override fun showHistory(result: List<History>?) {
+    override fun showHistory(result: List<History>) {
         swipeRefreshLayout?.isRefreshing = false
-        if (result == null || result.size < pageSize) {
+        if (result.size < pageSize) {
             swipeRefreshLayout?.loadFinish(false, false)
         } else {
             swipeRefreshLayout?.loadFinish(false, true)

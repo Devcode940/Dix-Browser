@@ -19,10 +19,10 @@ class AddressBarManager(private val context: Context) {
     val isLoading: LiveData<Boolean> get() = _isLoading
 
     // Supported search engines
-    enum class SearchEngine(val baseUrl: String, val name: String) {
-        GOOGLE("https://www.google.com/search?q=", "Google"),
-        BING("https://www.bing.com/search?q=", "Bing"),
-        DUCKDUCKGO("https://duckduckgo.com/?q=", "DuckDuckGo")
+    enum class SearchEngine(val baseUrl: String) {
+        GOOGLE("https://www.google.com/search?q="),
+        BING("https://www.bing.com/search?q="),
+        DUCKDUCKGO("https://duckduckgo.com/?q=")
     }
 
     private var currentSearchEngine = SearchEngine.GOOGLE

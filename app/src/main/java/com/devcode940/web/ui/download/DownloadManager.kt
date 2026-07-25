@@ -77,9 +77,9 @@ class BrowserDownloadManager(private val context: Context) {
         val cursor = downloadManager.query(query)
 
         return if (cursor.moveToFirst()) {
-            val status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
-            val progress = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR))
-            val total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES))
+            val status = cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_STATUS))
+            val progress = cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR))
+            val total = cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_TOTAL_SIZE_BYTES))
 
             val percent = if (total > 0) (progress * 100 / total) else 0
 

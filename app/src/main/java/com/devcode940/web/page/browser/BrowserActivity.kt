@@ -148,7 +148,9 @@ class BrowserActivity : AppCompatActivity(), IWebView.OnWebInteractListener, IBr
     }
 
     fun enterPictureInPicture() {
-        pipManager?.enterPictureInPictureMode()
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            pipManager?.enterPictureInPictureMode()
+        }
     }
 
     override fun onResume() {

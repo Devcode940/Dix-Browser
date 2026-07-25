@@ -20,6 +20,8 @@ interface IWebView {
 
     fun canGoForward(): Boolean
 
+    fun reload()
+
     fun releaseSession()
 
     fun onResume()

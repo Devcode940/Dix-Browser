@@ -7,8 +7,8 @@ object StringUtils {
     fun isNotEmpty(str: String?): Boolean = !isEmpty(str)
 
     fun isValidUrl(url: String?): Boolean {
-        if (isEmpty(url)) return false
-        return url!!.startsWith("http://") ||
+        if (url.isNullOrEmpty()) return false
+        return url.startsWith("http://") ||
             url.startsWith("https://") ||
             url.startsWith("ftp://") ||
             url.startsWith("file://") ||

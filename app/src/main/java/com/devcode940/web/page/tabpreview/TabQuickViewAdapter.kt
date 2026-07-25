@@ -53,7 +53,8 @@ class TabQuickViewAdapter(private var context: Context?) :
     }
 
     private fun bindQuickView(holder: TabQuickViewHolder, position: Int) {
-        val info = tabLruCache!!.provideInfoList()[position]
+        val cache = tabLruCache ?: return
+        val info = cache.provideInfoList()[position]
 
         val ctx = context
         if (ctx is IBrowser) {
@@ -72,11 +73,11 @@ class TabQuickViewAdapter(private var context: Context?) :
         holder.siteTitle.text = info.title
 
         holder.closeButton.setOnClickListener {
-            if (tabLruCache == null || tabLruCache?.provideInfoList() == null) {
+            if (tabLruCache?.provideInfoList() == null) {
                 return@setOnClickListener
             }
-            if (!StringUtils.isEmpty(info.tag) && listener != null) {
-                listener!!.onTabClose(info)
+            if (!StringUtils.isEmpty(info.tag)) {
+                listener?.onTabClose(info)
             }
         }
 
@@ -101,10 +102,8 @@ class TabQuickViewAdapter(private var context: Context?) :
     }
 
     override fun getItemCount(): Int {
-        if (tabLruCache == null || tabLruCache?.provideInfoList() == null) {
-            return 1
-        }
-        return tabLruCache!!.provideInfoList().size + 1
+        val cache = tabLruCache ?: return 1
+        return cache.provideInfoList().size + 1
     }
 
     override fun getItemViewType(position: Int): Int {

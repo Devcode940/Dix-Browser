@@ -5,16 +5,8 @@ import androidx.room.Room
 import com.devcode940.web.common.Const
 import com.devcode940.web.entity.dao.AppDatabase
 import com.devcode940.web.utils.SharedPreferencesUtils
-import com.devcode940.web.web.WebViewSecurityConfig
-import dagger.hilt.android.HiltAndroidApp
+import com.devcode940.web.WebViewSecurityConfig
 
-/**
- * Application class with Hilt support.
- *
- * Merged from the legacy Java Application (DB + first-boot prefs) and the
- * modernized Hilt/security stub.
- */
-@HiltAndroidApp
 class EasyApplication : Application() {
 
     private lateinit var db: AppDatabase

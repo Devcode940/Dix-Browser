@@ -62,18 +62,11 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.kotlinx.coroutines.android)
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.webkit)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.recyclerview)
-
-    // Hilt Dependency Injection
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    ksp("com.google.dagger:hilt-compiler:2.51.1")
-
-    // RxJava (used by history/front-page presenters and BrowserActivity)
-    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
-    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

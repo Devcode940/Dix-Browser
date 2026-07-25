@@ -47,9 +47,9 @@ class SiteAdapterV2(private val context: Context) :
 
         val entity = dataList[position]
         holder.title.text = entity.siteName
-        if (StringUtils.isNotEmpty(entity.siteName) && entity.siteName!!.isNotEmpty()) {
-            val drawName = entity.siteName!!.substring(0, 1)
-            holder.icon.setName(drawName)
+        val name = entity.siteName
+        if (!name.isNullOrEmpty()) {
+            holder.icon.setName(name.substring(0, 1))
         } else {
             holder.icon.setName("E")
         }

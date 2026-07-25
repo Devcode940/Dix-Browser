@@ -9,7 +9,7 @@ interface ITabQuickView {
 
         fun detach()
 
-        fun provideInfoList(): List<TabInfo>
+        fun provideInfoList(): MutableList<TabInfo>
 
         fun updateTabInfo(info: TabInfo)
     }

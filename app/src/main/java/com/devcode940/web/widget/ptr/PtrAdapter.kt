@@ -65,9 +65,10 @@ abstract class PtrAdapter<ENTITY, HOLDER : RecyclerView.ViewHolder>(
                 fillHeader(holder)
             } else if (position >= headerCount && position < dataSize + headerCount) {  // content position
                 val realPosition = position - headerCount
-                if (dataList != null && realPosition < dataList!!.size) {
+                val list = dataList
+                if (list != null && realPosition < list.size) {
                     @Suppress("UNCHECKED_CAST")
-                    fillData(holder as HOLDER, dataList, realPosition)
+                    fillData(holder as HOLDER, list, realPosition)
                     holder.itemView.tag = realPosition
                 }
             } else if (position >= dataSize + headerCount && footerCount > 0) {  // footer position
@@ -135,10 +136,10 @@ abstract class PtrAdapter<ENTITY, HOLDER : RecyclerView.ViewHolder>(
 
     val contentSize: Int
         get() {
-            if (this.dataList == null) {
-                this.dataList = ArrayList()
+            if (dataList == null) {
+                dataList = ArrayList()
             }
-            return dataList!!.size
+            return dataList?.size ?: 0
         }
 
     fun getOnListItemClickListener(): OnListItemClickListener? = onListItemClickListener

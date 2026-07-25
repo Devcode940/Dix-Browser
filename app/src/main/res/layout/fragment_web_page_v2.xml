@@ -34,7 +34,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.devcode940.web.web.webkit.EasyNestedWebView
+        <com.devcode940.web.webkit.EasyNestedWebView
             android:id="@+id/page_webview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

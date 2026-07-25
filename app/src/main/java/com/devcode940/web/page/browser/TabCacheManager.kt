@@ -271,10 +271,8 @@ class TabCacheManager(
     override fun onTabRefresh() {
         val manager = fm ?: return
         val target = findVisibleFragment(manager) ?: return
-        val info = getCurrentTab() ?: return
-        val url = info.uri?.toString() ?: return
         if (target is ITab) {
-            target.loadUrl(url)
+            target.reload()
         }
     }
 

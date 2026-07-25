@@ -102,11 +102,11 @@ class PtrLayout : SwipeRefreshLayout {
         private var lastVisibleItem = 0
 
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            if (recyclerView.adapter == null) {
+            val adapter = recyclerView.adapter ?: run {
                 lastVisibleItem = -1
                 return
             }
-            if (!loading && lastVisibleItem + 1 == recyclerView.adapter!!.itemCount) {
+            if (!loading && lastVisibleItem + 1 == adapter.itemCount) {
                 if (loading || !hasMore) {
                     return
                 }

@@ -14,5 +14,7 @@ interface ITab {
 
     fun loadUrl(url: String)
 
+    fun reload()
+
     fun getTabPreview(): Bitmap?
 }

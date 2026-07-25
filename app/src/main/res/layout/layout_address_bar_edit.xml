@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.devcode940.web.web.webkit.AddressBar xmlns:android="http://schemas.android.com/apk/res/android"
+<com.devcode940.web.webkit.AddressBar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/web_address_bar"
     android:layout_width="match_parent"
@@ -34,4 +34,4 @@
         android:background="@null"
         tools:text="@string/placeholder_url" />
 
-</com.devcode940.web.web.webkit.AddressBar>
+</com.devcode940.web.webkit.AddressBar>

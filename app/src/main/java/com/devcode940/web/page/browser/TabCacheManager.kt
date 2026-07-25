@@ -47,6 +47,7 @@ class TabCacheManager(
      * @param fragment 目标Fragment
      */
     private fun restoreTabCache(infoCopy: TabInfo, fragment: Fragment?) {
+        val frag = fragment ?: return
         var prevIndex = -1
         for (i in infoList.indices) {
             if (infoCopy == infoList[i]) {
@@ -57,11 +58,11 @@ class TabCacheManager(
         if (prevIndex >= 0) {
             // 之前有缓存，直接put进cache，不更新列表，需要从infoList中拿到真正的TabInfo
             val info = infoList[prevIndex]
-            lruCache.put(info, fragment as Fragment)
+            lruCache.put(info, frag)
         } else {
             // 缓存列表里不存在此项
             infoList.add(infoCopy)
-            lruCache.put(infoCopy, fragment as Fragment)
+            lruCache.put(infoCopy, frag)
         }
     }
 
